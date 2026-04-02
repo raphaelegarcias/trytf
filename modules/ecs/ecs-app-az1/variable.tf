@@ -1,0 +1,9 @@
+variable "secgroup_id" {}
+variable "ecs_name" {}
+variable "billing_mode" {}
+variable "disk_type" {}
+variable "disk_size" {}
+variable "os" {}
+variable "password" {}
+variable "uuid" {}
+variable "flavor" {}
