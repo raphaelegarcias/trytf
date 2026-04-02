@@ -1,0 +1,88 @@
+{
+  "version": 4,
+  "terraform_version": "1.14.4",
+  "serial": 270,
+  "lineage": "965b376c-f577-6a80-dbfd-ecabe0286deb",
+  "outputs": {},
+  "resources": [
+    {
+      "module": "module.exposuresubnet",
+      "mode": "managed",
+      "type": "huaweicloud_vpc_subnet",
+      "name": "subnet3",
+      "provider": "provider[\"registry.terraform.io/huaweicloud/huaweicloud\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "availability_zone": "sa-brazil-1a",
+            "cidr": "192.168.3.0/24",
+            "description": "",
+            "dhcp_domain_name": null,
+            "dhcp_enable": true,
+            "dhcp_ipv6_lease_time": null,
+            "dhcp_lease_time": "87600h",
+            "dns_list": [
+              "100.125.1.22",
+              "100.125.1.90"
+            ],
+            "gateway_ip": "192.168.3.1",
+            "id": "5d06ca40-b4f0-4726-856e-21e0c0e723f5",
+            "ipv4_subnet_id": "e4ce6429-cd8e-4ca4-a412-d19425bb89b8",
+            "ipv6_cidr": "",
+            "ipv6_enable": false,
+            "ipv6_gateway": "",
+            "ipv6_subnet_id": "",
+            "name": "exposure-subnet",
+            "ntp_server_address": null,
+            "primary_dns": "100.125.1.22",
+            "region": "sa-brazil-1",
+            "secondary_dns": "100.125.1.90",
+            "subnet_id": "e4ce6429-cd8e-4ca4-a412-d19425bb89b8",
+            "tags": {},
+            "timeouts": null,
+            "vpc_id": "6fdab113-df15-4457-976e-250385a52b66"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsImRlbGV0ZSI6NjAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "module.vpc.huaweicloud_vpc.vpc"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.vpc",
+      "mode": "managed",
+      "type": "huaweicloud_vpc",
+      "name": "vpc",
+      "provider": "provider[\"registry.terraform.io/huaweicloud/huaweicloud\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "block_service_endpoint_states": null,
+            "cidr": "192.168.0.0/16",
+            "description": "",
+            "enhanced_local_route": "false",
+            "enterprise_project_id": "0",
+            "id": "6fdab113-df15-4457-976e-250385a52b66",
+            "name": "vpc",
+            "region": "sa-brazil-1",
+            "routes": [],
+            "secondary_cidr": null,
+            "secondary_cidrs": [],
+            "status": "OK",
+            "tags": {},
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6MTgwMDAwMDAwMDAwfX0="
+        }
+      ]
+    }
+  ],
+  "check_results": null
+}

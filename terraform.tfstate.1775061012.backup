@@ -1,0 +1,218 @@
+{
+  "version": 4,
+  "terraform_version": "1.14.4",
+  "serial": 256,
+  "lineage": "965b376c-f577-6a80-dbfd-ecabe0286deb",
+  "outputs": {},
+  "resources": [
+    {
+      "module": "module.elb",
+      "mode": "data",
+      "type": "huaweicloud_elb_flavors",
+      "name": "l7",
+      "provider": "provider[\"registry.terraform.io/huaweicloud/huaweicloud\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "bandwidth": null,
+            "category": null,
+            "cps": null,
+            "flavor_id": null,
+            "flavor_sold_out": null,
+            "flavors": [
+              {
+                "bandwidth": 50,
+                "category": 0,
+                "cps": 2000,
+                "flavor_sold_out": false,
+                "https_cps": 200,
+                "id": "c8e6a969-76ab-441f-acc9-af101483b042",
+                "lcu": 10,
+                "max_connections": 200000,
+                "name": "L7_flavor.elb.s1.small",
+                "public_border_group": "center",
+                "qps": 4000,
+                "shared": true,
+                "type": "L7"
+              }
+            ],
+            "id": "3007bb49-7e41-3311-d7a6-2884bfd157c9",
+            "ids": [
+              "c8e6a969-76ab-441f-acc9-af101483b042"
+            ],
+            "list_all": null,
+            "max_connections": null,
+            "name": "L7_flavor.elb.s1.small",
+            "public_border_group": null,
+            "qps": null,
+            "region": "sa-brazil-1",
+            "shared": null,
+            "type": "L7"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0
+        }
+      ]
+    },
+    {
+      "module": "module.elb",
+      "mode": "managed",
+      "type": "huaweicloud_elb_loadbalancer",
+      "name": "this",
+      "provider": "provider[\"registry.terraform.io/huaweicloud/huaweicloud\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "auto_pay": null,
+            "auto_renew": null,
+            "autoscaling_enabled": false,
+            "availability_zone": [
+              "sa-brazil-1a"
+            ],
+            "backend_subnets": [
+              "5d06ca40-b4f0-4726-856e-21e0c0e723f5"
+            ],
+            "bandwidth_charge_mode": "traffic",
+            "bandwidth_id": null,
+            "bandwidth_size": 10,
+            "charge_mode": "flavor",
+            "charging_mode": "postPaid",
+            "created_at": "2026-03-31T21:14:56Z",
+            "cross_vpc_backend": false,
+            "deletion_protection_enable": false,
+            "description": "Dedicated ELB in Exposure Subnet",
+            "elb_virsubnet_type": "ipv4",
+            "enable_force_new": null,
+            "enterprise_project_id": "0",
+            "force_delete": null,
+            "frozen_scene": "",
+            "guaranteed": true,
+            "gw_flavor_id": "",
+            "id": "f1ca188c-bbe0-4a02-b4a5-d801583af4e2",
+            "iptype": "5_bgp",
+            "ipv4_address": "192.168.3.10",
+            "ipv4_eip": "124.81.6.241",
+            "ipv4_eip_id": "5e06fd46-f60a-42f0-9549-af43e48c2456",
+            "ipv4_port_id": "741a7622-2730-4df4-8ee1-2f697dda229a",
+            "ipv4_subnet_id": "e4ce6429-cd8e-4ca4-a412-d19425bb89b8",
+            "ipv6_address": "",
+            "ipv6_bandwidth_id": null,
+            "ipv6_eip": null,
+            "ipv6_eip_id": null,
+            "ipv6_network_id": "",
+            "l4_flavor_id": "",
+            "l7_flavor_id": "c8e6a969-76ab-441f-acc9-af101483b042",
+            "loadbalancer_type": "",
+            "min_l7_flavor_id": "",
+            "name": "elb-exposure",
+            "operating_status": "ONLINE",
+            "period": null,
+            "period_unit": null,
+            "protection_reason": "",
+            "protection_status": "nonProtection",
+            "public_border_group": "center",
+            "region": "sa-brazil-1",
+            "sharetype": "PER",
+            "tags": {
+              "environment": "training",
+              "managed_by": "terraform"
+            },
+            "timeouts": null,
+            "updated_at": "2026-03-31T21:14:59Z",
+            "vpc_id": "6fdab113-df15-4457-976e-250385a52b66",
+            "waf_failure_action": "forward"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6MzAwMDAwMDAwMDAwLCJ1cGRhdGUiOjYwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "module.elb.data.huaweicloud_elb_flavors.l7",
+            "module.exposuresubnet.huaweicloud_vpc_subnet.subnet3",
+            "module.vpc.huaweicloud_vpc.vpc"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.exposuresubnet",
+      "mode": "managed",
+      "type": "huaweicloud_vpc_subnet",
+      "name": "subnet3",
+      "provider": "provider[\"registry.terraform.io/huaweicloud/huaweicloud\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "availability_zone": "sa-brazil-1a",
+            "cidr": "192.168.3.0/24",
+            "description": "",
+            "dhcp_domain_name": null,
+            "dhcp_enable": true,
+            "dhcp_ipv6_lease_time": null,
+            "dhcp_lease_time": "87600h",
+            "dns_list": [
+              "100.125.1.22",
+              "100.125.1.90"
+            ],
+            "gateway_ip": "192.168.3.1",
+            "id": "5d06ca40-b4f0-4726-856e-21e0c0e723f5",
+            "ipv4_subnet_id": "e4ce6429-cd8e-4ca4-a412-d19425bb89b8",
+            "ipv6_cidr": "",
+            "ipv6_enable": false,
+            "ipv6_gateway": "",
+            "ipv6_subnet_id": "",
+            "name": "exposure-subnet",
+            "ntp_server_address": null,
+            "primary_dns": "100.125.1.22",
+            "region": "sa-brazil-1",
+            "secondary_dns": "100.125.1.90",
+            "subnet_id": "e4ce6429-cd8e-4ca4-a412-d19425bb89b8",
+            "tags": {},
+            "timeouts": null,
+            "vpc_id": "6fdab113-df15-4457-976e-250385a52b66"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsImRlbGV0ZSI6NjAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "module.vpc.huaweicloud_vpc.vpc"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.vpc",
+      "mode": "managed",
+      "type": "huaweicloud_vpc",
+      "name": "vpc",
+      "provider": "provider[\"registry.terraform.io/huaweicloud/huaweicloud\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "block_service_endpoint_states": null,
+            "cidr": "192.168.0.0/16",
+            "description": "",
+            "enhanced_local_route": "false",
+            "enterprise_project_id": "0",
+            "id": "6fdab113-df15-4457-976e-250385a52b66",
+            "name": "vpc",
+            "region": "sa-brazil-1",
+            "routes": [],
+            "secondary_cidr": null,
+            "secondary_cidrs": [],
+            "status": "OK",
+            "tags": {},
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6MTgwMDAwMDAwMDAwfX0="
+        }
+      ]
+    }
+  ],
+  "check_results": null
+}
